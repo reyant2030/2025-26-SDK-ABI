@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Definitions.DriveTrain;
-@TeleOp (name = "MainTeleOp")
+@TeleOp(name = "MainTeleOp")
 public class TheTeleOp extends LinearOpMode {
 
     @Override
