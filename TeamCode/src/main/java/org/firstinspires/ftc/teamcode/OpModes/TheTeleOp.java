@@ -1,10 +1,11 @@
 package org.firstinspires.ftc.teamcode.OpModes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Definitions.DriveTrain;
-@com.qualcomm.robotcore.eventloop.opmode.TeleOp
-public class TeleOp extends LinearOpMode {
+@TeleOp (name = "MainTeleOp")
+public class TheTeleOp extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException{
