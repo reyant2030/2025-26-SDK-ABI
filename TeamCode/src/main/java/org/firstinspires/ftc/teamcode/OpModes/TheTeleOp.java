@@ -29,8 +29,8 @@ public class TheTeleOp extends LinearOpMode {
         }
 
         while (opModeIsActive()){
-            forward = -gamepad1.left_stick_y;
-            strafe = gamepad1.left_stick_x;
+            forward = gamepad1.left_stick_y;
+            strafe = -gamepad1.left_stick_x;
             rotate = gamepad1.right_stick_x;
 
 

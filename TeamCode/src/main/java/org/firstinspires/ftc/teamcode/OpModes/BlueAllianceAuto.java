@@ -1,15 +1,19 @@
 package org.firstinspires.ftc.teamcode.OpModes;
 
+import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.IMU;
 
 @Autonomous (name = "BlueAllianceAuto")
 public class BlueAllianceAuto extends LinearOpMode {
-    public DcMotor frontLeftMotor = null;
-    public DcMotor backLeftMotor = null;
-    public DcMotor frontRightMotor = null;
-    public DcMotor backRightMotor = null;
+    public DcMotor frontLeftMotor;
+    public DcMotor backLeftMotor;
+    public DcMotor frontRightMotor;
+    public DcMotor backRightMotor;
+
 
     public int backLeftPos;
     public int backRightPos;
@@ -18,6 +22,25 @@ public class BlueAllianceAuto extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
+        frontLeftMotor = hardwareMap.get(DcMotor.class, "FrontLeftMotor");
+        backLeftMotor = hardwareMap.get(DcMotor.class, "BackLeftMotor");
+        frontRightMotor = hardwareMap.get(DcMotor.class, "FrontRightMotor");
+        backRightMotor = hardwareMap.get(DcMotor.class, "BackRightMotor");
+
+
+        frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        backLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
         waitForStart();
 
         drive(537.7, 537.7, 537.7, 537.7, 1);
@@ -31,15 +54,11 @@ public class BlueAllianceAuto extends LinearOpMode {
 
     public void drive(double backLeftTarget, double backRightTarget, double frontLeftTarget,
                       double frontRightTarget, double speed){
-        backLeftPos += backLeftTarget;
-        backRightPos += backRightTarget;
-        frontLeftPos += frontLeftTarget;
-        frontRightPos += frontRightTarget;
 
-        frontLeftMotor.setTargetPosition(backLeftPos);
-        backLeftMotor.setTargetPosition(backRightPos);
-        frontRightMotor.setTargetPosition(frontLeftPos);
-        backRightMotor.setTargetPosition(frontRightPos);
+        frontLeftMotor.setTargetPosition((int)frontLeftTarget);
+        backLeftMotor.setTargetPosition((int)backLeftTarget);
+        frontRightMotor.setTargetPosition((int)frontRightTarget);
+        backRightMotor.setTargetPosition((int)backRightTarget);
 
         frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
