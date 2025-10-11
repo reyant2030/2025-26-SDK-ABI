@@ -18,7 +18,8 @@ public class DriveTrain {
         backLeftMotor = hardwareMap.get(DcMotor.class, "BackLeftMotor");
         frontRightMotor = hardwareMap.get(DcMotor.class, "FrontRightMotor");
         backRightMotor = hardwareMap.get(DcMotor.class, "BackRightMotor");
-        intakeMotor = hardwareMap.get(DcMotor.class, "BackRightMotor");
+        intakeMotor = hardwareMap.get(DcMotor.class, "IntakeMotor");
+
 
         frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
         backLeftMotor.setDirection(DcMotor.Direction.REVERSE);
