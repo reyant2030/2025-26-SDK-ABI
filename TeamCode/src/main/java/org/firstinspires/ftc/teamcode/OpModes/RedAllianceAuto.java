@@ -32,10 +32,10 @@ public class RedAllianceAuto extends LinearOpMode {
 
     public void drive(double backLeftTarget, double backRightTarget, double frontLeftTarget,
                       double frontRightTarget, double speed){
-        backLeftPos += backLeftTarget;
-        backRightPos += backRightTarget;
-        frontLeftPos += frontLeftTarget;
-        frontRightPos += frontRightTarget;
+        backLeftPos = (int) (backLeftPos + backLeftTarget);
+        backRightPos = (int) (backRightPos + backRightTarget);
+        frontLeftPos = (int) (frontLeftPos + frontLeftTarget);
+        frontRightPos = (int) (frontRightPos + frontRightTarget);
 
         frontLeftMotor.setTargetPosition(backLeftPos);
         backLeftMotor.setTargetPosition(backRightPos);
