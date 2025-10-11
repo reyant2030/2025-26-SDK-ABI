@@ -4,8 +4,11 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Definitions.DriveTrain;
+import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp(name = "MainTeleOp")
 public class TheTeleOp extends LinearOpMode {
+
+    private DcMotor intakeMotor;
 
     @Override
     public void runOpMode() throws InterruptedException{
@@ -29,6 +32,14 @@ public class TheTeleOp extends LinearOpMode {
             rotate = gamepad1.right_stick_x;
 
             drivetrain.driveFieldRelative(forward,strafe,rotate);
+
+            if (gamepad1.right_bumper) {
+                intakeMotor.setPower(1);
+            }
+
+            if (gamepad1.left_bumper){
+                intakeMotor.setPower(-1);
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 @Disabled
 public class DriveTrain {
-    private DcMotor frontLeftMotor, frontRightMotor, backLeftMotor, backRightMotor;
+    private DcMotor frontLeftMotor, frontRightMotor, backLeftMotor, backRightMotor, intakeMotor;
     private IMU imu;
 
     public void initDrivetrain(HardwareMap hardwareMap) {
@@ -18,6 +18,7 @@ public class DriveTrain {
         backLeftMotor = hardwareMap.get(DcMotor.class, "BackLeftMotor");
         frontRightMotor = hardwareMap.get(DcMotor.class, "FrontRightMotor");
         backRightMotor = hardwareMap.get(DcMotor.class, "BackRightMotor");
+        intakeMotor = hardwareMap.get(DcMotor.class, "BackRightMotor");
 
         frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
         backLeftMotor.setDirection(DcMotor.Direction.REVERSE);
