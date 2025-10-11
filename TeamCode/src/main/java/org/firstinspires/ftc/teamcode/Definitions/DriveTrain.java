@@ -63,15 +63,15 @@ public class DriveTrain {
         backRightMotor.setPower(maxSpeed * (backRightPower / maxPower));
     }
 
-    public void driveFieldRelative(double forward, double strafe, double rotate) {
-        double theta = Math.atan2(forward, strafe);
-        double r = Math.hypot(strafe, forward);
+    //public void driveFieldRelative(double forward, double strafe, double rotate) {
+        //double theta = Math.atan2(forward, strafe);
+        //double r = Math.hypot(strafe, forward);
 
-        theta = AngleUnit.normalizeRadians(theta - imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS));
+        //theta = AngleUnit.normalizeRadians(theta - imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS));
 
-        double newForward = r * Math.sin(theta);
-        double newStrafe = r * Math.cos(theta);
+        //double newForward = r * Math.sin(theta);
+        //double newStrafe = r * Math.cos(theta);
 
-        this.drive(newForward, newStrafe, rotate);
-    }
+        //this.drive(newForward, newStrafe, rotate);
+   // }
 }
