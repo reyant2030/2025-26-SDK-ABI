@@ -37,10 +37,10 @@ public class RedAllianceAuto extends LinearOpMode {
         frontLeftPos = (int) (frontLeftPos + frontLeftTarget);
         frontRightPos = (int) (frontRightPos + frontRightTarget);
 
-        frontLeftMotor.setTargetPosition(backLeftPos);
-        backLeftMotor.setTargetPosition(backRightPos);
-        frontRightMotor.setTargetPosition(frontLeftPos);
-        backRightMotor.setTargetPosition(frontRightPos);
+        frontLeftMotor.setTargetPosition(frontLeftPos);
+        backLeftMotor.setTargetPosition(backLeftPos);
+        frontRightMotor.setTargetPosition(frontRightPos);
+        backRightMotor.setTargetPosition(backRightPos);
 
         frontLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backLeftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
