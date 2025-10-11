@@ -13,8 +13,8 @@ public class TheTeleOp extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException{
-        DriveTrain drivetrain = new DriveTrain();
-        drivetrain.initDrivetrain(hardwareMap);
+        DriveTrain drive = new DriveTrain();
+        drive.initDrivetrain(hardwareMap);
         intakeMotor = hardwareMap.get(DcMotor.class, "IntakeMotor");
 
         double forward, strafe, rotate;
@@ -29,18 +29,24 @@ public class TheTeleOp extends LinearOpMode {
         }
 
         while (opModeIsActive()){
-            forward = gamepad1.left_stick_y;
+            forward = -gamepad1.left_stick_y;
             strafe = gamepad1.left_stick_x;
             rotate = gamepad1.right_stick_x;
 
-            drivetrain.driveFieldRelative(forward,strafe,rotate);
 
-            while (gamepad1.right_bumper) {
+
+            drive.driveFieldRelative(forward,strafe,rotate);
+
+            if (gamepad1.right_bumper) {
                 intakeMotor.setPower(1);
             }
 
-            while (gamepad1.left_bumper){
+            if (gamepad1.left_bumper) {
                 intakeMotor.setPower(-1);
+            }
+
+            if (gamepad1.b) {
+                intakeMotor.setPower(0);
             }
         }
     }
