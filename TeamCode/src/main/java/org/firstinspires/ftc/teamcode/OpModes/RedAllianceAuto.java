@@ -6,10 +6,10 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous (name = "RedAllianceAuto")
 public class RedAllianceAuto extends LinearOpMode {
-    public DcMotor frontLeftMotor = null;
-    public DcMotor backLeftMotor = null;
-    public DcMotor frontRightMotor = null;
-    public DcMotor backRightMotor = null;
+    public DcMotor frontLeftMotor;
+    public DcMotor backLeftMotor;
+    public DcMotor frontRightMotor;
+    public DcMotor backRightMotor;
 
     public int backLeftPos;
     public int backRightPos;
