@@ -24,15 +24,15 @@ public class DriveTrain {
         frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
         backLeftMotor.setDirection(DcMotor.Direction.REVERSE);
 
-        //frontLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        //backLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        //frontRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        //backRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //frontLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         imu = hardwareMap.get(IMU.class, "IMU");
 
