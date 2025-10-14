@@ -33,14 +33,6 @@ public class DriveTrain {
         //backLeftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         //frontRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         //backRightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        imu = hardwareMap.get(IMU.class, "IMU");
-
-        RevHubOrientationOnRobot revOrientation = new RevHubOrientationOnRobot(
-                RevHubOrientationOnRobot.LogoFacingDirection.RIGHT,
-                RevHubOrientationOnRobot.UsbFacingDirection.UP);
-
-        imu.initialize(new IMU.Parameters(revOrientation));
     }
 
     public void drive(double forward, double strafe, double rotate) {

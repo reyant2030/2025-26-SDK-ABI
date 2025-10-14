@@ -29,13 +29,13 @@ public class TheTeleOp extends LinearOpMode {
         }
 
         while (opModeIsActive()){
-            forward = gamepad1.left_stick_y;
-            strafe = -gamepad1.left_stick_x;
+            forward = -gamepad1.left_stick_y;
+            strafe = gamepad1.left_stick_x;
             rotate = gamepad1.right_stick_x;
 
 
 
-            drive.driveFieldRelative(forward,strafe,rotate);
+            drive.drive(forward,strafe,rotate);
 
             if (gamepad1.right_bumper) {
                 intakeMotor.setPower(1);
